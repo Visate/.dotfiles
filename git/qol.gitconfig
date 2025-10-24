@@ -1,0 +1,56 @@
+[init]
+	defaultBranch = main
+
+# Replace GitHub URLs with SSH equivalents, add alias for gh:user/repo
+[url "git@github.com:"]
+    insteadOf = "https://github.com/"
+    insteadOf = "gh:"
+
+# Delta configuration - install git-delta for improved diffs
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+# General diff/logging improvements
+[merge]
+    conflictStyle = zdiff3
+[diff]
+	algorithm = histogram
+[log]
+    date = iso
+[branch]
+    sort = -committerdate
+
+# Auto stash changes when rebasing, pulling
+# Update any dependant stacked branches on rebase
+# Don't allow deleting commits except with drop
+[rebase]
+	autostash = true
+    updateRefs = true
+    missingCommitsCheck = error
+[pull]
+    rebase = true
+# Show more verbose commit info
+[commit]
+	verbose = true
+# Attempt to automatically resolve conflicts during rebase when possible
+[rerere]
+	enabled = true
+# Set default push behavior to upstream
+[push]
+    autoSetupRemote = true
+	default = upstream
+# Enable command auto-correction
+[help]
+	autocorrect = 1
+# Enable fsck on transfer, fetch, receive
+[transfer]
+    fsckObjects = true
+[fetch]
+    fsckObjects = true
+[receive]
+    fsckObjects = true
