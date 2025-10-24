@@ -12,8 +12,6 @@
 zmodule environment
 # direnv
 zmodule direnv
-# Provides handy git aliases and functions.
-zmodule git
 # Applies correct bindkeys for input events.
 zmodule input
 # Sets a custom terminal title.
