@@ -1,5 +1,4 @@
 eval $(keychain --eval --quiet id_ed25519)
-eval "$(direnv hook zsh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -148,8 +147,6 @@ export CD_LS_COMMAND=la
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 # pnpm
 export PNPM_HOME="/home/visate/.local/share/pnpm"

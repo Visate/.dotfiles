@@ -7,12 +7,13 @@ My config for my development environment. Includes configurations for:
 - [zsh](https://www.zsh.org/), a powerful alternative shell, configured with the [Zim framework](https://github.com/zimfw/zimfw)
 
 ### Requirements
+
 - [GNU stow](https://www.gnu.org/software/stow/), a utility to help manage dotfiles by symlinking them to the places they need to be
 
 #### Optional, but recommended
+
 - Powerlevel10k (zsh prompt) recommended font: [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts)
 - [eza](https://github.com/eza-community/eza), a modern ls replacement, adding colours and icons
-- [pyenv's suggested build environment packages](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
 
 
 ### Installation

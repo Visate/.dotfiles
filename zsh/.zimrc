@@ -10,6 +10,8 @@
 
 # Sets sane Zsh built-in environment options.
 zmodule environment
+# direnv
+zmodule direnv
 # Provides handy git aliases and functions.
 zmodule git
 # Applies correct bindkeys for input events.
@@ -22,13 +24,13 @@ zmodule utility
 zmodule zshzoo/cd-ls
 # Clipboard utils
 zmodule zpm-zsh/clipboard
+# magic enter
+zmodule magic-enter
 
 #
 # Prompt
 #
-
-# A powerful prompt.
-zmodule romkatv/powerlevel10k
+zmodule joke/zim-starship
 
 #
 # Completion
