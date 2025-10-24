@@ -54,8 +54,6 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
-# Pyenv module
-zmodule mattberther/zsh-pyenv
 # Nvm module
 zmodule lukechilds/zsh-nvm
 # }}} End configuration added by Zim install

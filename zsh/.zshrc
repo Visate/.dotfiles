@@ -1,4 +1,5 @@
 eval $(keychain --eval --quiet id_ed25519)
+eval "$(direnv hook zsh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -141,6 +142,26 @@ setopt NO_NOMATCH
 export ZSH_BITWARDEN_COPY_CMD=pbcopy
 export CD_LS_COMMAND=la
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[[ ! -f ~/.aliases.zsh ]] || source ~/.aliases.zsh
+[[ -s /opt/asdf-vm/asdf.sh ]] && source /opt/asdf-vm/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# pnpm
+export PNPM_HOME="/home/visate/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
+# script added by uv to automatically load local bin into path
+. "$HOME/.local/bin/env"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

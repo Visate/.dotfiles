@@ -15,4 +15,10 @@ export SAVEHIST=10000
 
 export VIMCONFIG=$XDG_CONFIG_HOME/nvim
 
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH=$ASDF_DATA_DIR/shims:$PATH
 export PATH=$HOME/.local/bin:$PATH
+. "$HOME/.cargo/env"
+eval "$(rbenv init - zsh)"
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
