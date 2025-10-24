@@ -12,11 +12,23 @@ $python\
 $nodejs\
 $rust\
 $golang\
-$php\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
+$direnv\
 \n$character"""
+
+right_format="""
+$status
+"""
+
+[status]
+symbol = "󰅖 "
+not_executable_symbol = "󱏎 "
+not_found_symbol = "󰡯 "
+sigint_symbol = " "
+signal_symbol = "󱐋 "
+disabled = false
 
 [sudo]
 style = "bg:#a3aed2 fg:#090c0c"
@@ -26,9 +38,11 @@ disabled = false
 
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"
-format = "[ $path ]($style)"
+format = "[ $path ]($style)[$read_only]($style)"
+read_only = "󰉐"
 truncation_length = 3
 truncation_symbol = "…/"
+truncate_to_repo = false
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -65,10 +79,15 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[php]
-symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[direnv]
+symbol = " "
+style = "fg:#a0a9cb"
+disabled = false
+loaded_msg = ""
+unloaded_msg = "󰅖"
+denied_msg = "󰦝"
+allowed_msg = "󰕥"
+not_allowed_msg = "󰦝"
 
 [time]
 disabled = false
