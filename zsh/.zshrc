@@ -3,9 +3,9 @@ eval $(keychain --eval --quiet id_ed25519)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Start configuration added by Zim install {{{
 #
@@ -44,7 +44,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # -----------------
 
 # Use degit instead of git as the default tool to install and update modules.
-#zstyle ':zim:zmodule' use 'degit'
+zstyle ':zim:zmodule' use 'degit'
 
 # --------------------
 # Module configuration
@@ -55,14 +55,14 @@ WORDCHARS=${WORDCHARS//[\/]}
 #
 
 # Set a custom prefix for the generated aliases. The default prefix is 'G'.
-zstyle ':zim:git' aliases-prefix 'g'
+# zstyle ':zim:git' aliases-prefix 'g'
 
 #
 # input
 #
 
 # Append `../` to your input for each `.` you type after an initial `..`
-#zstyle ':zim:input' double-dot-expand yes
+zstyle ':zim:input' double-dot-expand yes
 
 #
 # termtitle
@@ -142,11 +142,10 @@ export ZSH_BITWARDEN_COPY_CMD=pbcopy
 export CD_LS_COMMAND=la
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ ! -f ~/.aliases.zsh ]] || source ~/.aliases.zsh
-[[ -s /opt/asdf-vm/asdf.sh ]] && source /opt/asdf-vm/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # pnpm
 export PNPM_HOME="/home/visate/.local/share/pnpm"
@@ -157,8 +156,10 @@ esac
 # pnpm end
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-# script added by uv to automatically load local bin into path
-. "$HOME/.local/bin/env"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+eval $(thefuck --alias)

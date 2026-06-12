@@ -29,6 +29,7 @@ zmodule magic-enter
 # Prompt
 #
 zmodule joke/zim-starship
+# zmodule romkatv/powerlevel10k --use degit
 
 #
 # Completion

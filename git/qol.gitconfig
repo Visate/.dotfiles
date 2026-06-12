@@ -1,5 +1,5 @@
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 # Replace GitHub URLs with SSH equivalents, add alias for gh:user/repo
 [url "git@github.com:"]
@@ -19,7 +19,7 @@
 [merge]
     conflictStyle = zdiff3
 [diff]
-	algorithm = histogram
+    algorithm = histogram
 [log]
     date = iso
 [branch]
@@ -29,24 +29,25 @@
 # Update any dependant stacked branches on rebase
 # Don't allow deleting commits except with drop
 [rebase]
-	autostash = true
+    autostash = true
     updateRefs = true
-    missingCommitsCheck = error
+    missingCommitsCheck = warn
+# Automatically rebase when pulling
 [pull]
     rebase = true
 # Show more verbose commit info
 [commit]
-	verbose = true
+    verbose = true
 # Attempt to automatically resolve conflicts during rebase when possible
 [rerere]
-	enabled = true
+    enabled = true
 # Set default push behavior to upstream
 [push]
     autoSetupRemote = true
-	default = upstream
+    default = upstream
 # Enable command auto-correction
 [help]
-	autocorrect = 1
+    autocorrect = 1
 # Enable fsck on transfer, fetch, receive
 [transfer]
     fsckObjects = true
